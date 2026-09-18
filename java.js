@@ -1,4 +1,4 @@
-// 1. Target DOM Nodes (Matching Slide 8)
+// 1. Target DOM Nodes (Matching Slide 😎
 const loginForm = document.getElementById("loginForm");
 const usernameInput = document.getElementById("usernameInput");
 const passwordInput = document.getElementById("passwordInput");
@@ -20,5 +20,17 @@ loginForm.addEventListener("submit", function (event) {
     feedbackBox.textContent = "Invalid credentials. Please try again.";
     passwordInput.value = "";
     passwordInput.focus();
+  }
+});
+
+const togglePasswordBtn = document.getElementById("togglePassword");
+
+togglePasswordBtn.addEventListener("click", function () {
+  if (passwordInput.getAttribute("type") === "password") {
+    passwordInput.setAttribute("type", "text");
+    togglePasswordBtn.textContent = "Hide Password";
+  } else {
+    passwordInput.setAttribute("type", "password");
+    togglePasswordBtn.textContent = "Show Password";
   }
 });
